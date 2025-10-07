@@ -1,20 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ikalach <ikalach@student.codam.nl>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/07 09:56:31 by ikalach           #+#    #+#             */
-/*   Updated: 2025/10/07 11:22:32 by ikalach          ###   ########.fr       */
+/*   Created: 2025/10/07 11:18:18 by ikalach           #+#    #+#             */
+/*   Updated: 2025/10/07 11:22:20 by ikalach          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isprint(int c)
+int	ft_strlen(const char *s)
 {
-	if (c >= 32 && c <= 126)
+	int	count;
+
+	count = 0;
+	while (s[count] != '\0')
 	{
-		return (1);
+		count++;
 	}
-	return (0);
+	return (count);
 }
+
+// #include <stdio.h>
+
+// int	main(void)
+// {
+// 	char *test = "this is a test ";
+// 	printf("%d", ft_strlen(test));
+// }

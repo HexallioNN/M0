@@ -1,20 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ikalach <ikalach@student.codam.nl>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/07 09:56:31 by ikalach           #+#    #+#             */
-/*   Updated: 2025/10/07 11:22:32 by ikalach          ###   ########.fr       */
+/*   Created: 2025/10/07 11:24:10 by ikalach           #+#    #+#             */
+/*   Updated: 2025/10/07 12:55:41 by ikalach          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isprint(int c)
+#include <stddef.h>
+
+void	*ft_memset(void *ptr, int value, size_t n)
 {
-	if (c >= 32 && c <= 126)
+	char	*test;
+
+	test = ptr;
+	while (n > 0)
 	{
-		return (1);
+		*test = value;
+		test++;
+		n--;
 	}
-	return (0);
+	return (ptr);
 }
+
+// #include <stdio.h>
+// #include <string.h>
+
+// int	main(void)
+// {
+// 	char str[50] = "This is a test.";
+// 	printf("\nBefore memset(): %s\n", str);
+
+// 	ft_memset(str + 4, '.', 3);
+
+// 	printf("After memset():  %s", str);
+// 	return (0);
+// }
