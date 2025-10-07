@@ -6,7 +6,7 @@
 /*   By: ikalach <ikalach@student.codam.nl>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/06 17:11:11 by ikalach           #+#    #+#             */
-/*   Updated: 2025/10/06 17:12:54 by ikalach          ###   ########.fr       */
+/*   Updated: 2025/10/07 13:53:09 by ikalach          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,3 +29,14 @@ int	ft_isalnum(int c)
 		return (0);
 	}
 }
+
+// #include <stdio.h>
+
+// int	main(void)
+// {
+// 	int test = 't';
+// 	if (ft_isalnum(test))
+// 	{
+// 		printf("success");
+// 	}
+// }

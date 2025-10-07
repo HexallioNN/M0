@@ -6,7 +6,7 @@
 /*   By: ikalach <ikalach@student.codam.nl>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/06 16:50:41 by ikalach           #+#    #+#             */
-/*   Updated: 2025/10/06 17:06:11 by ikalach          ###   ########.fr       */
+/*   Updated: 2025/10/07 13:52:56 by ikalach          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,3 +25,14 @@ int	ft_isalpha(int c)
 		return (0);
 	}
 }
+
+// #include <stdio.h>
+
+// int	main(void)
+// {
+// 	int test = 't';
+// 	if (ft_isalpha(test))
+// 	{
+// 		printf("success");
+// 	}
+// }

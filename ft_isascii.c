@@ -6,7 +6,7 @@
 /*   By: ikalach <ikalach@student.codam.nl>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 09:46:51 by ikalach           #+#    #+#             */
-/*   Updated: 2025/10/07 09:52:30 by ikalach          ###   ########.fr       */
+/*   Updated: 2025/10/07 13:52:43 by ikalach          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,3 +18,14 @@ int	ft_isascii(int c)
 	}
 	return (0);
 }
+
+// #include <stdio.h>
+
+// int	main(void)
+// {
+// 	int test = 't';
+// 	if (ft_isascii(test))
+// 	{
+// 		printf("success");
+// 	}
+// }
