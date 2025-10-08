@@ -1,34 +1,50 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ikalach <ikalach@student.codam.nl>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/08 14:52:19 by ikalach           #+#    #+#             */
-/*   Updated: 2025/10/08 17:21:14 by ikalach          ###   ########.fr       */
+/*   Created: 2025/10/08 17:11:22 by ikalach           #+#    #+#             */
+/*   Updated: 2025/10/08 17:32:39 by ikalach          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strchr(const char *s, int c)
+static int	ft_strlen(const char *s)
 {
+	int	count;
+
+	count = 0;
+	while (s[count] != '\0')
+	{
+		count++;
+	}
+	return (count);
+}
+
+char	*ft_strrchr(const char *s, int c)
+{
+	int		length;
 	char	val[100];
 	char	*ptr;
-	int		test;
 	int		i;
 
+	length = ft_strlen(s);
 	i = 0;
-	test = 0;
 	ptr = val;
-	while (*s != '\0')
+	while (length > 0)
 	{
-		if (*s == c || test == 1)
+		if (s[length] == c)
 		{
-			val[i] = *s;
-			test = 1;
-			i++;
+			break ;
 		}
-		s++;
+		length--;
+	}
+	while (s[length] != '\0')
+	{
+		val[i] = s[length];
+		i++;
+		length++;
 	}
 	return (ptr);
 }
@@ -39,7 +55,7 @@ char	*ft_strchr(const char *s, int c)
 // int	main(void)
 // {
 // 	char myStr[] = "Hello World";
-// 	char *myPtr = ft_strchr(myStr, '\0');
+// 	char *myPtr = ft_strrchr(myStr, 'e');
 // 	if (myPtr != 0)
 // 	{
 // 		printf("%s", myPtr);
