@@ -6,7 +6,7 @@
 /*   By: ikalach <ikalach@student.codam.nl>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/09 14:42:09 by ikalach           #+#    #+#             */
-/*   Updated: 2025/10/09 15:42:04 by ikalach          ###   ########.fr       */
+/*   Updated: 2025/10/09 15:56:18 by ikalach          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ char	*ft_strnstr(const char *str, const char *to_find, size_t len)
 	{
 		j = 0;
 		while (str[i + j] != '\0' && to_find[j] != '\0' && str[i
-			+ j] == to_find[j])
+				+ j] == to_find[j])
 		{
 			j++;
 		}
