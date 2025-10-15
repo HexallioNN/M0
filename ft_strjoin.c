@@ -6,7 +6,7 @@
 /*   By: ikalach <ikalach@student.codam.nl>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 15:09:53 by ikalach           #+#    #+#             */
-/*   Updated: 2025/10/15 15:42:12 by ikalach          ###   ########.fr       */
+/*   Updated: 2025/10/15 15:44:37 by ikalach          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,10 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	s2_count = 0;
 	s1_count = 0;
 	result = malloc(3);
+	if (result == NULL)
+	{
+		return (NULL);
+	}
 	while (s2[s2_count] != '\0')
 	{
 		while (s1[s1_count] != '\0')
@@ -36,8 +40,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	return (result);
 }
 
-// int	main(void)
-// {
-// 	char *result = ft_strjoin("This is ", "a test");
-// 	printf("%s", result);
-// }
+int	main(void)
+{
+	char *result = ft_strjoin("This is ", "a test");
+	printf("%s", result);
+}
