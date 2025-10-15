@@ -6,11 +6,11 @@
 /*   By: ikalach <ikalach@student.codam.nl>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/09 15:56:59 by ikalach           #+#    #+#             */
-/*   Updated: 2025/10/13 11:49:50 by ikalach          ###   ########.fr       */
+/*   Updated: 2025/10/15 14:45:30 by ikalach          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*strdup(const char *s)
+char	*ft_strdup(const char *s)
 {
 	char	target[120];
 	char	*ptr;
@@ -33,7 +33,7 @@ char	*strdup(const char *s)
 // {
 // 	char source[] = "This is a test";
 
-// 	char *target = strdup(source);
+// 	char *target = ft_strdup(source);
 
 // 	printf("%s", target);
 // 	return (0);
