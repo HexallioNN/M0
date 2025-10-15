@@ -6,7 +6,7 @@
 /*   By: ikalach <ikalach@student.codam.nl>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 15:09:53 by ikalach           #+#    #+#             */
-/*   Updated: 2025/10/15 15:44:37 by ikalach          ###   ########.fr       */
+/*   Updated: 2025/10/15 15:44:59 by ikalach          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	return (result);
 }
 
-int	main(void)
-{
-	char *result = ft_strjoin("This is ", "a test");
-	printf("%s", result);
-}
+// int	main(void)
+// {
+// 	char *result = ft_strjoin("This is ", "a test");
+// 	printf("%s", result);
+// }
