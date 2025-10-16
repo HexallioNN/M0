@@ -6,7 +6,7 @@
 /*   By: ikalach <ikalach@student.codam.nl>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 15:45:33 by ikalach           #+#    #+#             */
-/*   Updated: 2025/10/15 16:46:29 by ikalach          ###   ########.fr       */
+/*   Updated: 2025/10/16 10:33:43 by ikalach          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	i = 0;
 	start = 0;
 	end = ft_strlen(s1) - 1;
-	result = malloc(3);
+	result = malloc(end + 2);
 	if (result == NULL)
 		return (NULL);
 	while (finder(s1[start], set))

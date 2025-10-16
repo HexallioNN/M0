@@ -6,7 +6,7 @@
 /*   By: ikalach <ikalach@student.codam.nl>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 12:49:21 by ikalach           #+#    #+#             */
-/*   Updated: 2025/10/15 15:19:14 by ikalach          ###   ########.fr       */
+/*   Updated: 2025/10/16 10:33:09 by ikalach          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*substr;
 	size_t	i;
 
-	substr = malloc(3);
+	substr = malloc(len + 1);
 	i = 0;
 	if (substr == NULL)
 	{
