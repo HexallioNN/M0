@@ -6,7 +6,7 @@
 /*   By: ikalach <ikalach@student.codam.nl>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 15:47:18 by ikalach           #+#    #+#             */
-/*   Updated: 2025/10/16 15:20:52 by ikalach          ###   ########.fr       */
+/*   Updated: 2025/10/16 15:39:52 by ikalach          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,7 +109,7 @@ char	**ft_split(char const *s, char c)
 
 // int	main(void)
 // {
-// 	char **array = ft_split("apple,pear,bana", ',');
+// 	char **array = ft_split("This is a test of the split function", ' ');
 // 	int i = 0;
 // 	while (array[i] != NULL)
 // 	{
