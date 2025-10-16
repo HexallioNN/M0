@@ -6,7 +6,7 @@
 /*   By: ikalach <ikalach@student.codam.nl>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 15:47:18 by ikalach           #+#    #+#             */
-/*   Updated: 2025/10/16 11:14:14 by ikalach          ###   ########.fr       */
+/*   Updated: 2025/10/16 11:15:55 by ikalach          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static char	*strcpy(char *s, char *r, int j, int len)
 {
 	while (j < len)
 	{
-		array[substr_index][j] = s[start + j];
+		r[j] = s[start + j];
 		j++;
 	}
 }
