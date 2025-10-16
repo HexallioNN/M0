@@ -6,7 +6,7 @@
 /*   By: ikalach <ikalach@student.codam.nl>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 15:47:18 by ikalach           #+#    #+#             */
-/*   Updated: 2025/10/16 14:07:58 by ikalach          ###   ########.fr       */
+/*   Updated: 2025/10/16 15:20:52 by ikalach          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,19 @@
 // int	j;  > 2
 // int	substr_index; > 3
 // int	start; > 4
+
+static void	copy_substring(char *dest, const char *src, int start, int length)
+{
+	int	i;
+
+	i = 0;
+	while (i < length)
+	{
+		dest[i] = src[start + i];
+		i++;
+	}
+	dest[i] = '\0';
+}
 
 static void	fill_array_5(int *int_array)
 {
@@ -70,14 +83,7 @@ static char	**fill(char const *s, char c, int str_count, char **array)
 			int_array[0] = int_array[1] - int_array[4];
 			array[int_array[3]] = (char *)ft_calloc(int_array[0] + 1,
 					sizeof(char));
-			int_array[2] = 0;
-			while (int_array[2] < int_array[0])
-			{
-				array[int_array[3]][int_array[2]] = s[int_array[4]
-					+ int_array[2]];
-				int_array[2]++;
-			}
-			array[int_array[3]][int_array[2]] = '\0';
+			copy_substring(array[int_array[3]], s, int_array[4], int_array[0]);
 			int_array[3]++;
 		}
 		else
@@ -103,7 +109,7 @@ char	**ft_split(char const *s, char c)
 
 // int	main(void)
 // {
-// 	char **array = ft_split("apple,pear,,;,,bana", ',');
+// 	char **array = ft_split("apple,pear,bana", ',');
 // 	int i = 0;
 // 	while (array[i] != NULL)
 // 	{
