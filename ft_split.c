@@ -6,7 +6,7 @@
 /*   By: ikalach <ikalach@student.codam.nl>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 15:47:18 by ikalach           #+#    #+#             */
-/*   Updated: 2025/10/16 10:36:09 by ikalach          ###   ########.fr       */
+/*   Updated: 2025/10/16 11:14:14 by ikalach          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,15 @@ static void	ft_bzero(void *s, size_t n)
 	}
 }
 
+static char	*strcpy(char *s, char *r, int j, int len)
+{
+	while (j < len)
+	{
+		array[substr_index][j] = s[start + j];
+		j++;
+	}
+}
+
 static void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*pointer;
@@ -40,50 +49,83 @@ static void	*ft_calloc(size_t nmemb, size_t size)
 	return (pointer);
 }
 
-char	**ft_split(char const *s, char c)
+static int	count_substrings(char const *s, char c)
 {
-	char	**array;
-	int		str_count;
-	int		i;
-	int		j;
-	int		check;
+	int	count;
+	int	in_substring;
 
-	i = 0;
+	count = 0;
+	in_substring = 0;
+	while (*s)
+	{
+		if (*s != c && !in_substring)
+		{
+			in_substring = 1;
+			count++;
+		}
+		else if (*s == c)
+			in_substring = 0;
+		s++;
+	}
+	return (count);
+}
+
+static char	**fill(char const *s, char c, int str_count, char **array)
+{
+	int	len;
+	int	i;
+	int	j;
+	int	substr_index;
+	int	start;
+
+	substr_index = 0;
 	j = 0;
-	str_count = 0;
-	**array = malloc[3];
-	array[str_count] = malloc(3);
-	while (s[i] != '\0')
+	i = 0;
+	while (s[i] && substr_index < str_count)
 	{
 		if (s[i] != c)
 		{
-			check = 0;
-			array[str_count][j] = s[i];
-			i++;
-			j++;
+			start = i;
+			while (s[i] && s[i] != c)
+				i++;
+			len = i - start;
+			array[substr_index] = (char *)ft_calloc(len + 1, sizeof(char));
+			while (j < len)
+			{
+				array[substr_index][j] = s[start + j];
+				j++;
+			}
+			array[substr_index][j] = '\0';
+			substr_index++;
 		}
 		else
-		{
-			if (check == 0)
-			{
-				str_count++;
-				array[str_count] = malloc(3);
-			}
-			check = 1;
 			i++;
-			j = 0;
-		}
 	}
 	return (array);
 }
 
-int	main(void)
+char	**ft_split(char const *s, char c)
 {
-	char **array = ft_split("apple,pear,bana", ',');
-	int i = 0;
-	while (array[i] != NULL)
-	{
-		printf("%s", array[i]);
-		i++;
-	}
+	char	**array;
+	int		str_count;
+
+	if (!s)
+		return (NULL);
+	str_count = count_substrings(s, c);
+	array = (char **)ft_calloc(str_count + 1, sizeof(char *));
+	if (!array)
+		return (NULL);
+	array = fill(s, c, str_count, array);
+	return (array);
 }
+
+// int	main(void)
+// {
+// 	char **array = ft_split("apple,pear,,;,,bana", ',');
+// 	int i = 0;
+// 	while (array[i] != NULL)
+// 	{
+// 		printf("%s\n", array[i]);
+// 		i++;
+// 	}
+// }
