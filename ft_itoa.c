@@ -6,7 +6,7 @@
 /*   By: ikalach <ikalach@student.codam.nl>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 15:40:37 by ikalach           #+#    #+#             */
-/*   Updated: 2025/10/18 09:38:39 by ikalach          ###   ########.fr       */
+/*   Updated: 2025/10/18 09:47:09 by ikalach          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ char	*ft_itoa(int n)
 	int		temp;
 
 	result = malloc(15);
+	if (result == NULL)
+		return (NULL);
 	temp = 0;
 	i = 0;
 	while (n > 0)
