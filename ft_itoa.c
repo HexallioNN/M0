@@ -6,40 +6,54 @@
 /*   By: ikalach <ikalach@student.codam.nl>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 15:40:37 by ikalach           #+#    #+#             */
-/*   Updated: 2025/10/18 09:47:09 by ikalach          ###   ########.fr       */
+/*   Updated: 2025/10/19 12:05:44 by ikalach          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
 
+static int	count_digits(long n)
+{
+	int	count;
+
+	count = 0;
+	if (n <= 0)
+		count = 1;
+	while (n != 0)
+	{
+		n /= 10;
+		count++;
+	}
+	return (count);
+}
+
 char	*ft_itoa(int n)
 {
-	char	temp_result[15];
-	char	*result;
+	char	*str;
+	long	nb;
+	int		len;
 	int		i;
-	int		temp;
 
-	result = malloc(15);
-	if (result == NULL)
+	nb = n;
+	len = count_digits(nb);
+	i = len - 1;
+	str = malloc(len + 1);
+	if (!str)
 		return (NULL);
-	temp = 0;
-	i = 0;
-	while (n > 0)
+	str[len] = '\0';
+	if (n < 0)
+		nb = -nb;
+	if (n == 0)
+		str[0] = '0';
+	while (nb > 0)
 	{
-		temp = n % 10;
-		n = n / 10;
-		temp_result[i] = temp + '0';
-		i++;
+		str[i--] = (nb % 10) + '0';
+		nb /= 10;
 	}
-	temp = 0;
-	while (temp_result[temp] != '\0')
-	{
-		result[temp] = temp_result[i - 1];
-		i--;
-		temp++;
-	}
-	return (result);
+	if (n < 0)
+		str[0] = '-';
+	return (str);
 }
 
 // int	main(void)
