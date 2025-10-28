@@ -6,32 +6,27 @@
 /*   By: ikalach <ikalach@student.codam.nl>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/08 17:11:22 by ikalach           #+#    #+#             */
-/*   Updated: 2025/10/27 09:23:10 by ikalach          ###   ########.fr       */
+/*   Updated: 2025/10/28 16:15:08 by ikalach          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <stdlib.h>
-
-static int	ft_strlen(const char *s)
-{
-	int	count;
-
-	count = 0;
-	while (s[count] != '\0')
-		count++;
-	return (count);
-}
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int	length;
+	int		i;
+	char	*last;
 
-	length = ft_strlen(s);
-	while (length >= 0)
+	last = 0;
+	i = 0;
+	while (s[i])
 	{
-		if (s[length] == (char)c)
-			return ((char *)&s[length]);
-		length--;
+		if (s[i] == (char)c)
+			last = (char *)&s[i];
+		i++;
 	}
-	return (NULL);
+	if ((char)c == '\0')
+		return ((char *)&s[i]);
+	return (last);
 }

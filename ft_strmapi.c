@@ -6,7 +6,7 @@
 /*   By: ikalach <ikalach@student.codam.nl>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 09:40:17 by ikalach           #+#    #+#             */
-/*   Updated: 2025/10/27 09:21:25 by ikalach          ###   ########.fr       */
+/*   Updated: 2025/10/28 16:09:05 by ikalach          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,15 @@
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	char	*result;
-	int		len;
-	int		i;
+	char			*result;
+	unsigned int	i;
 
-	i = 0;
-	len = ft_strlen(s);
-	result = ft_calloc(len, sizeof(char) + 1);
-	if (s == NULL || f == NULL)
+	if (!s || !f)
 		return (NULL);
+	result = malloc(ft_strlen(s) + 1);
+	if (!result)
+		return (NULL);
+	i = 0;
 	while (s[i] != '\0')
 	{
 		result[i] = f(i, s[i]);

@@ -6,7 +6,7 @@
 /*   By: ikalach <ikalach@student.codam.nl>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 14:44:42 by ikalach           #+#    #+#             */
-/*   Updated: 2025/10/28 15:43:06 by ikalach          ###   ########.fr       */
+/*   Updated: 2025/10/28 16:23:02 by ikalach          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,28 +14,29 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	unsigned char		*pdest;
-	const unsigned char	*psrc;
+	unsigned char	*pdest;
+	unsigned char	*psrc;
+	size_t			j;
+	size_t			i;
 
-	pdest = dest;
-	psrc = src;
-	if (psrc >= pdest)
+	j = 1;
+	i = 0;
+	pdest = (unsigned char *)dest;
+	psrc = (unsigned char *)src;
+	if (!dest && !src)
+		return (NULL);
+	if (dest > src)
 	{
-		while (n > 0)
-		{
-			*pdest++ = *psrc++;
-			n--;
-		}
-	}
-	else if (psrc < pdest)
-	{
+		j = -1;
 		pdest += n - 1;
 		psrc += n - 1;
-		while (n > 0)
-		{
-			*pdest-- = *psrc--;
-			n--;
-		}
+	}
+	while (i < n)
+	{
+		*pdest = *psrc;
+		pdest += j;
+		psrc += j;
+		i++;
 	}
 	return (dest);
 }
